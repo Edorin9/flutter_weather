@@ -1,0 +1,11 @@
+
+### locationSearch
+GET https://geocoding-api.open-meteo.com/v1/search
+    ?name=san%20fernando
+    &count=1
+
+### getWeather
+GET https://api.open-meteo.com/v1/forecast
+    ?latitude=43.0389
+    &longitude=-87.90647
+    &current_weather=true

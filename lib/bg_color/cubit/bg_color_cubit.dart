@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
+
+import '../../weather/weather.dart';
+
+class BgColorCubit extends HydratedCubit<Color> {
+  BgColorCubit() : super(defaultColor);
+
+  static const defaultColor = Color(0xFF2196F3);
+
+  void updateBgColor(Weather? weather) {
+    if (weather != null) emit(weather.toColor);
+  }
+
+  @override
+  Color fromJson(Map<String, dynamic> json) {
+    return Color(int.parse(json['color'] as String));
+  }
+
+  @override
+  Map<String, dynamic> toJson(Color state) {
+    return <String, String>{'color': '${state.value}'};
+  }
+}
+
+extension on Weather {
+  Color get toColor {
+    switch (condition) {
+      case WeatherCondition.clear:
+        return Colors.orangeAccent;
+      case WeatherCondition.snowy:
+        return Colors.lightBlueAccent;
+      case WeatherCondition.cloudy:
+        return Colors.blueGrey;
+      case WeatherCondition.rainy:
+        return Colors.indigoAccent;
+      case WeatherCondition.unknown:
+        return BgColorCubit.defaultColor;
+    }
+  }
+}

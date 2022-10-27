@@ -1,0 +1,34 @@
+name: flutter_weather
+description: A new Flutter project.
+version: 1.0.0+1
+publish_to: 'none'
+
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.1
+  freezed_annotation: ^2.1.0
+  google_fonts: ^3.0.1
+  hydrated_bloc: ^9.0.0-dev.3
+  json_annotation: ^4.7.0
+  path_provider: ^2.0.11
+  weather_repository:
+    path: packages/weather_repository
+
+dev_dependencies:
+  bloc_test: ^9.1.0
+  build_runner: ^2.2.1
+  flutter_test:
+    sdk: flutter
+  freezed: any
+  json_serializable: ^6.4.1
+  mocktail: ^0.3.0
+  very_good_analysis: ^3.1.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
