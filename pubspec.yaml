@@ -23,10 +23,13 @@ dev_dependencies:
   build_runner: ^2.2.1
   flutter_test:
     sdk: flutter
-  freezed: any
+  freezed: ^2.2.1
   json_serializable: ^6.4.1
   mocktail: ^0.3.0
   very_good_analysis: ^3.1.0
+
+dependency_overrides:
+  test_api: ^0.4.15
 
 flutter:
   uses-material-design: true
